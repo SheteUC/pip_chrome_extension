@@ -1,0 +1,50 @@
+{
+  "name": "Leafy Player",
+  "description": "Watch video using Picture-in-Picture",
+  "version": "1.11",
+  "icons": {
+    "128": "images/128icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "images/16icon.png",
+      "48": "images/48icon.png"
+    }
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "windows": "Alt+P",
+        "mac": "Alt+P",
+        "chromeos": "Alt+P",
+        "linux": "Alt+P"
+      }
+    }
+  },
+  "permissions": [
+    "scripting",
+    "storage",
+    "pictureInPicture"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["script.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["styles.css"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "manifest_version": 3
+
+  
+}
